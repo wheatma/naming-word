@@ -14,11 +14,11 @@ export default class App extends PureComponent {
         loading: false,
     };
 
-    handleQuery = async (formValue) => {
+    handleQuery = async (filter) => {
         this.setState({
             loading: true,
         });
-        const filteredWords = await filterWords(this.words, formValue);
+        const filteredWords = await filterWords(this.words, filter);
         this.setState({
             filterWords: filteredWords,
             loading: false,
